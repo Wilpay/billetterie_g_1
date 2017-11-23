@@ -9,6 +9,6 @@ package modele.metier;
  *
  * @author btssio
  */
-public class Concert {
+public class Groupe {
     
 }

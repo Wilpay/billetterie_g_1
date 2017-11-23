@@ -27,7 +27,7 @@ public class CtrlLesGroupes implements WindowListener, ActionListener {
         this.vue.addWindowListener(this);
 
         // préparer l'état iniitial de la vue
-        List<Groupes> lesGroupes = null;
+        List<Groupe> lesGroupes = null;
         try {
             lesGroupes = DaoGroupe.selectAll();
         } catch (SQLException ex) {
