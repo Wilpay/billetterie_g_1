@@ -5,10 +5,12 @@
  */
 package modele.metier;
 
+import java.util.List;
+
 /**
  *
  * @author btssio
  */
 public class Groupe {
-    
+
 }
