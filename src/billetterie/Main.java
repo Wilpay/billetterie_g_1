@@ -5,11 +5,11 @@
  */
 package billetterie;
 
-import controleur.CtrlLesGroupes;
+import modele.dao.Jdbc;
+import vue.*;
+import controleur.*;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import modele.dao.Jdbc;
-import vue.VueBilletterie;
 
 /**
  *
@@ -26,7 +26,7 @@ public class Main {
         Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "festival", "root", "joliverie");
         try {
             Jdbc.getInstance().connecter();
-            VueBilletterie uneVue = new VueBilletterie();
+            VuePrincipale uneVue = new VuePrincipale();
             CtrlLesGroupes unControleur = new CtrlLesGroupes(uneVue);
             // afficher la vue
             uneVue.setVisible(true);

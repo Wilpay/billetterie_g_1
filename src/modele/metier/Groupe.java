@@ -20,10 +20,10 @@ public class Groupe {
       private String adresse;
       private int nbPers;
       private String nomPays;
-      private char hebergement;
+      private String hebergement;
       
       
-      public Groupe(String id, String nom, String identite, String adresse, int nbPers, String nomPays, char hebergement) {
+      public Groupe(String id, String nom, String identite, String adresse, int nbPers, String nomPays, String hebergement) {
         this.id = id;
         this.nom = nom;
         this.identite = identite;
@@ -87,11 +87,11 @@ public class Groupe {
         this.nomPays = nomPays;
     }
 
-    public char getHebergement() {
+    public String getHebergement() {
         return hebergement;
     }
 
-    public void setHebergement(char hebergement) {
+    public void setHebergement(String hebergement) {
         this.hebergement = hebergement;
     }
       
