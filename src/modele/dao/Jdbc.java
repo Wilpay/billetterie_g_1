@@ -1,20 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modele.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.*;
 
 /**
+ * Singleton fournit un objet de connexion JDBC
  *
- * @author btssio
+ * @author nbourgeois
+ * @version 2 22 novembre 2013
  */
 public class Jdbc {
+
     // Instance du singleton Jdbc
     private static Jdbc singleton = null;
     // Paramètre de la connexion
