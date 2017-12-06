@@ -5,8 +5,11 @@
  */
 package billetterie;
 
+import controleur.CtrlLesGroupes;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import modele.dao.Jdbc;
+import vue.VueBilletterie;
 
 /**
  *
@@ -20,7 +23,7 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "AGENCEB", "agenceb_util", "secret");
+        Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "festival", "root", "joliverie");
         try {
             Jdbc.getInstance().connecter();
             VueBilletterie uneVue = new VueBilletterie();
