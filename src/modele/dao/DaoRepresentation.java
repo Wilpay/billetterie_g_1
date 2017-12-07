@@ -55,15 +55,13 @@ public class DaoRepresentation {
      * @throws SQLException 
      */
     public static List<Representation> selectAll() throws SQLException {
-        List<Representation> lesRepresentation = new ArrayList<Representation>();
+        List<Representation> lesRepresentations = new ArrayList<Representation>();
         Representation uneRepresentation;
         ResultSet rs;
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT g.nom, l.nom FROM REPRESENTATION r\n" +
-                            "INNER JOIN  GROUPE g ON r.id_groupe = g.id\n" +
-                                    "INNER JOIN LIEU l ON r.id_lieu = l.id";
+        String requete = "SELECT * FROM Representation r INNER JOIN  Groupe g ON r.id_groupe = g.id  INNER JOIN Lieu l ON r.id_lieu = l.id";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         rs = pstmt.executeQuery();
         while (rs.next()) {
@@ -74,9 +72,9 @@ public class DaoRepresentation {
             String heure_debut = rs.getString("heure_deb");
             String heure_fin = rs.getString("heure_fin");
             uneRepresentation = new Representation(id, date, lieu, groupe, heure_debut, heure_fin);
-            lesRepresentation.add(uneRepresentation);
+            lesRepresentations.add(uneRepresentation);
         }
-        return lesRepresentation;
+        return lesRepresentations;
     }
     
         /**
