@@ -43,7 +43,7 @@ public class CtrlLesGroupes implements WindowListener{
         getVue().getModeleTableGroupe().setRowCount(0);
         String[] titresColonnes = {"NOM", "NOMPAYS", "HEBERGEMENT"};
         getVue().getModeleTableGroupe().setColumnIdentifiers(titresColonnes);
-        String[] ligneDonnees = new String[4];
+        String[] ligneDonnees = new String[3];
         for (Groupe unGroupe : desGroupes) {
             ligneDonnees[0] = unGroupe.getNom();
             ligneDonnees[1] = unGroupe.getNomPays();

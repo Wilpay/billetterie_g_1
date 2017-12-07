@@ -29,7 +29,7 @@ public class DaoGroupe {
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT * FROM GROUPE WHERE ID= ?";
+        String requete = "SELECT * FROM Groupe WHERE ID= ?";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         pstmt.setInt(1, idGroupe);
         rs = pstmt.executeQuery();
@@ -58,7 +58,7 @@ public class DaoGroupe {
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT * FROM GROUPE";
+        String requete = "SELECT * FROM Groupe";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         rs = pstmt.executeQuery();
         while (rs.next()) {
@@ -88,7 +88,7 @@ public class DaoGroupe {
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT * FROM GROUPE WHERE NOMPAYS LIKE ?";
+        String requete = "SELECT * FROM Groupe WHERE NOMPAYS LIKE ?";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         pstmt.setString(1, "%"+extraitNomGroupe+"%");
         rs = pstmt.executeQuery();
@@ -120,7 +120,7 @@ public class DaoGroupe {
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT * FROM Groupe";
+        String requete = "SELECT * FROM GROUPE";
         switch (cleTri) {
             case 1: // Tri par Id
                 requete += " ORDER BY ID";
