@@ -5,6 +5,8 @@
  */
 package modele.metier;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 /**
@@ -14,13 +16,13 @@ import java.util.Date;
 public class Representation {
     
     private String id;
-    private Date date;
+    private LocalDate date;
     private String lieu;
     private String groupe;
-    private String heure_debut;
-    private String heure_fin;
+    private LocalTime heure_debut;
+    private LocalTime heure_fin;
     
-    public Representation(String id, Date date, String lieu, String groupe, String heure_debut, String heure_fin) {
+    public Representation(String id, LocalDate date, String lieu, String groupe, LocalTime heure_debut, LocalTime heure_fin) {
         this.id = id;
         this.date = date;
         this.lieu = lieu;
@@ -43,11 +45,11 @@ public class Representation {
         this.id = id;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -67,19 +69,19 @@ public class Representation {
         this.groupe = groupe;
     }
 
-    public String getHeure_debut() {
+    public LocalTime getHeure_debut() {
         return heure_debut;
     }
 
-    public void setHeure_debut(String heure_debut) {
+    public void setHeure_debut(LocalTime heure_debut) {
         this.heure_debut = heure_debut;
     }
 
-    public String getHeure_fin() {
+    public LocalTime getHeure_fin() {
         return heure_fin;
     }
 
-    public void setHeure_fin(String heure_fin) {
+    public void setHeure_fin(LocalTime heure_fin) {
         this.heure_fin = heure_fin;
     }
     
