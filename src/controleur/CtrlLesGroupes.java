@@ -40,15 +40,15 @@ public class CtrlLesGroupes implements WindowListener{
      * @param desGroupes liste des adresses à afficher
      */
     private final void afficherLesGroupes(List<Groupe> desGroupes) {
-        getVue().getModeleTableGroupe().setRowCount(0);
+        getVue().getModeleTableRepresentation().setRowCount(0);
         String[] titresColonnes = {"NOM", "NOMPAYS", "HEBERGEMENT"};
-        getVue().getModeleTableGroupe().setColumnIdentifiers(titresColonnes);
-        String[] ligneDonnees = new String[4];
+        getVue().getModeleTableRepresentation().setColumnIdentifiers(titresColonnes);
+        String[] ligneDonnees = new String[3];
         for (Groupe unGroupe : desGroupes) {
             ligneDonnees[0] = unGroupe.getNom();
             ligneDonnees[1] = unGroupe.getNomPays();
             ligneDonnees[2] = unGroupe.getHebergement();
-            getVue().getModeleTableGroupe().addRow(ligneDonnees);            
+            getVue().getModeleTableRepresentation().addRow(ligneDonnees);            
         }       
     }
 

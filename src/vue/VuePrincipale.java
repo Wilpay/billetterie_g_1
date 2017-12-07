@@ -14,14 +14,14 @@ import javax.swing.table.DefaultTableModel;
 public class VuePrincipale extends javax.swing.JFrame {
 
     
-     private DefaultTableModel modeleTableGroupe;
+     private DefaultTableModel modeleTableRepresentation;
     /**
      * Creates new form VuePrincipale
      */
     public VuePrincipale() {
         initComponents();
-        modeleTableGroupe = new DefaultTableModel();
-        jTableGroupe.setModel(modeleTableGroupe);
+        modeleTableRepresentation = new DefaultTableModel();
+        jTableRepresentation.setModel(modeleTableRepresentation);
     }
 
     /**
@@ -34,11 +34,11 @@ public class VuePrincipale extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableGroupe = new javax.swing.JTable();
+        jTableRepresentation = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTableGroupe.setModel(new javax.swing.table.DefaultTableModel(
+        jTableRepresentation.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -49,7 +49,7 @@ public class VuePrincipale extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTableGroupe);
+        jScrollPane1.setViewportView(jTableRepresentation);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,8 +72,8 @@ public class VuePrincipale extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    public DefaultTableModel getModeleTableGroupe() {
-        return modeleTableGroupe;
+    public DefaultTableModel getModeleTableRepresentation() {
+        return modeleTableRepresentation;
     }
     
     /**
@@ -113,6 +113,6 @@ public class VuePrincipale extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableGroupe;
+    private javax.swing.JTable jTableRepresentation;
     // End of variables declaration//GEN-END:variables
 }
