@@ -61,7 +61,9 @@ public class DaoRepresentation {
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT * FROM Representation INNER JOIN ";
+        String requete = "SELECT g.nom, l.nom FROM REPRESENTATION r\n" +
+                            "INNER JOIN  GROUPE g ON r.id_groupe = g.id\n" +
+                                    "INNER JOIN LIEU l ON r.id_lieu = l.id";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         rs = pstmt.executeQuery();
         while (rs.next()) {
