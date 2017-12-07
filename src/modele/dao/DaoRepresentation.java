@@ -33,19 +33,19 @@ public class DaoRepresentation {
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT * FROM REPRESENTATION WHERE ID= ?";
+        String requete = "SELECT * FROM Representation WHERE ID= ?";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         pstmt.setInt(1, idRepresentation);
         rs = pstmt.executeQuery();
         if (rs.next()) {
             String id = rs.getString("id_rep");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            LocalDate ld = LocalDate.parse("date_rep");
+            String date = rs.getString("date_rep");
             String lieu = rs.getString("id_lieu");
             String groupe = rs.getString("id_groupe");
             String heure_debut = rs.getString("heure_deb");
             String heure_fin = rs.getString("heure_fin");
-            uneRepresentation = new Representation(id, ld, lieu, groupe, heure_debut, heure_fin);
+            uneRepresentation = new Representation(id, date, lieu, groupe, heure_debut, heure_fin);
         }
         return uneRepresentation;
     }
@@ -61,16 +61,16 @@ public class DaoRepresentation {
         PreparedStatement pstmt;
         Jdbc jdbc = Jdbc.getInstance();
         // préparer la requête
-        String requete = "SELECT * FROM REPRESENTATION";
+        String requete = "SELECT * FROM Representation INNER JOIN ";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         rs = pstmt.executeQuery();
         while (rs.next()) {
             String id = rs.getString("id_rep");
-            LocalDate date = rs.getLocalDate("date_rep");
+            String date = rs.getString("date_rep");
             String lieu = rs.getString("id_lieu");
-            String groupe = rs.getString("id_group");
-            LocalTime heure_debut = rs.getLocalTime("heure_deb");
-            LocalTime heure_fin = rs.getLocalTime("heure_fin");
+            String groupe = rs.getString("id_groupe");
+            String heure_debut = rs.getString("heure_deb");
+            String heure_fin = rs.getString("heure_fin");
             uneRepresentation = new Representation(id, date, lieu, groupe, heure_debut, heure_fin);
             lesRepresentation.add(uneRepresentation);
         }
@@ -94,11 +94,11 @@ public class DaoRepresentation {
         rs = pstmt.executeQuery();
         while (rs.next()) {
             String id = rs.getString("id_rep");
-            LocalDate date = rs.getString("date_rep");
+            String date = rs.getString("date_rep");
             String lieu = rs.getString("id_lieu");
-            String groupe = rs.getString("id_group");
-            LocalTime heure_debut = rs.getString("heure_deb");
-            LocalTime heure_fin = rs.getString("heure_fin");
+            String groupe = rs.getString("id_groupe");
+            String heure_debut = rs.getString("heure_deb");
+            String heure_fin = rs.getString("heure_fin");
             uneRepresentation = new Representation(id, date, lieu, groupe, heure_debut, heure_fin);
             lesRepresentation.add(uneRepresentation);
         }
@@ -140,11 +140,11 @@ public class DaoRepresentation {
         rs = pstmt.executeQuery();
         while (rs.next()) {
             String id = rs.getString("id_rep");
-            LocalDate date = rs.getLocalDate("date_rep");
+            String date = rs.getString("date_rep");
             String lieu = rs.getString("id_lieu");
             String groupe = rs.getString("id_group");
-            LocalTime heure_debut = rs.getString("heure_deb");
-            LocalTime heure_fin = rs.getString("heure_fin");
+            String heure_debut = rs.getString("heure_deb");
+            String heure_fin = rs.getString("heure_fin");
             uneRepresentation = new Representation(id, date, lieu, groupe, heure_debut, heure_fin);
             lesRepresentation.add(uneRepresentation);
         }
@@ -161,11 +161,11 @@ public class DaoRepresentation {
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         pstmt.setInt(1, idRepresentation);
         pstmt.setString(2, uneRepresentation.getId());
-        pstmt.LocalDate(3, uneRepresentation.getDate());
+        pstmt.setString(3, uneRepresentation.getDate());
         pstmt.setString(4, uneRepresentation.getLieu());
         pstmt.setString(5, uneRepresentation.getGroupe());
-        pstmt.LocalTime(6, uneRepresentation.getHeure_debut());
-        pstmt.LocalTime(7, uneRepresentation.getHeure_fin());
+        pstmt.setString(6, uneRepresentation.getHeure_debut());
+        pstmt.setString(7, uneRepresentation.getHeure_fin());
         nb = pstmt.executeUpdate();
         return nb;
     }
@@ -179,11 +179,11 @@ public class DaoRepresentation {
         requete = "UPDATE REPRESENTATION SET ID = ? , DATE = ? , LIEU = ? , GROUPE = ? , HEURE_DEB = ? , HEURE_FIN = ? WHERE ID = ?";
         pstmt = jdbc.getConnexion().prepareStatement(requete);
         pstmt.setString(2, uneRepresentation.getId());
-        pstmt.LocalDate(3, uneRepresentation.getDate());
+        pstmt.setString(3, uneRepresentation.getDate());
         pstmt.setString(4, uneRepresentation.getLieu());
         pstmt.setString(5, uneRepresentation.getGroupe());
-        pstmt.LocalTime(6, uneRepresentation.getHeure_debut());
-        pstmt.LocalTime(7, uneRepresentation.getHeure_fin());
+        pstmt.setString(6, uneRepresentation.getHeure_debut());
+        pstmt.setString(7, uneRepresentation.getHeure_fin());
         pstmt.setInt(8, idRepresentation);
         nb = pstmt.executeUpdate();
         return nb;

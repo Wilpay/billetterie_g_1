@@ -16,13 +16,13 @@ import java.util.Date;
 public class Representation {
     
     private String id;
-    private LocalDate date;
+    private String date;
     private String lieu;
     private String groupe;
-    private LocalTime heure_debut;
-    private LocalTime heure_fin;
+    private String heure_debut;
+    private String heure_fin;
     
-    public Representation(String id, LocalDate date, String lieu, String groupe, LocalTime heure_debut, LocalTime heure_fin) {
+    public Representation(String id, String date, String lieu, String groupe, String heure_debut, String heure_fin) {
         this.id = id;
         this.date = date;
         this.lieu = lieu;
@@ -31,6 +31,7 @@ public class Representation {
         this.heure_fin = heure_fin;
 
     }
+
 
     @Override
     public String toString() {
@@ -45,11 +46,11 @@ public class Representation {
         this.id = id;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -69,19 +70,19 @@ public class Representation {
         this.groupe = groupe;
     }
 
-    public LocalTime getHeure_debut() {
+    public String getHeure_debut() {
         return heure_debut;
     }
 
-    public void setHeure_debut(LocalTime heure_debut) {
+    public void setHeure_debut(String heure_debut) {
         this.heure_debut = heure_debut;
     }
 
-    public LocalTime getHeure_fin() {
+    public String getHeure_fin() {
         return heure_fin;
     }
 
-    public void setHeure_fin(LocalTime heure_fin) {
+    public void setHeure_fin(String heure_fin) {
         this.heure_fin = heure_fin;
     }
     

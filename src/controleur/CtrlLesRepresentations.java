@@ -12,6 +12,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.swing.JOptionPane;
+import modele.dao.DaoRepresentation;
 import modele.metier.Representation;
 import vue.VuePrincipale;
 
@@ -48,17 +49,16 @@ public class CtrlLesRepresentations implements WindowListener {
         String[] titresColonnes = {"Lieu", "Groupe", "date","heureDeb","heureFin"};
         getVue().getModeleTableRepresentation().setColumnIdentifiers(titresColonnes);
         
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy") ;
-        DateFormat df2 = new SimpleDateFormat("HH:MM");
+
         
         String[] ligneDonnees = new String[5];
         
         for (Representation uneRepresentation : desRepresentations) {
             ligneDonnees[0] = uneRepresentation.getLieu();
             ligneDonnees[1] = uneRepresentation.getGroupe();
-            ligneDonnees[2] = df.format(uneRepresentation.getDate());
-            ligneDonnees[3] = df2.format(uneRepresentation.getHeure_debut());
-            ligneDonnees[4] = df2.format(uneRepresentation.getHeure_fin());
+            ligneDonnees[2] = uneRepresentation.getDate();
+            ligneDonnees[3] = uneRepresentation.getHeure_debut();
+            ligneDonnees[4] = uneRepresentation.getHeure_fin();
             getVue().getModeleTableRepresentation().addRow(ligneDonnees);            
         }       
     }
