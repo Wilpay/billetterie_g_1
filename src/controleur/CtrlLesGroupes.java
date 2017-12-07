@@ -8,13 +8,10 @@ package controleur;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.swing.JOptionPane;
 import modele.dao.DaoGroupe;
 import modele.metier.Groupe;
-import vue.VueBilletterie;
 import vue.VuePrincipale;
 
 public class CtrlLesGroupes implements WindowListener{
@@ -31,28 +28,26 @@ public class CtrlLesGroupes implements WindowListener{
         try {
             lesGroupes = DaoGroupe.selectAll();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(getVue(), "CtrlLesClients - échec de sélection des Clients");
+            JOptionPane.showMessageDialog(getVue(), "CtrlLesGroupes - échec de sélection des Groupes");
         }
         afficherLesGroupes(lesGroupes);
     }
 
     // contrôle de la vue
     /**
-     * Remplir le composant JTable avec les adresses
+     * Remplir le composant JTable avec les groupes
      *
      * @param desGroupes liste des adresses à afficher
      */
     private final void afficherLesGroupes(List<Groupe> desGroupes) {
         getVue().getModeleTableGroupe().setRowCount(0);
-        String[] titresColonnes = {"ID", "NOM", "NOMPAYS"};
+        String[] titresColonnes = {"NOM", "NOMPAYS", "HEBERGEMENT"};
         getVue().getModeleTableGroupe().setColumnIdentifiers(titresColonnes);
-        
-        String[] ligneDonnees = new String[3];
-        
+        String[] ligneDonnees = new String[4];
         for (Groupe unGroupe : desGroupes) {
-            ligneDonnees[0] = unGroupe.getId();
-            ligneDonnees[1] = unGroupe.getNom();
-            ligneDonnees[2] = unGroupe.getNomPays();
+            ligneDonnees[0] = unGroupe.getNom();
+            ligneDonnees[1] = unGroupe.getNomPays();
+            ligneDonnees[2] = unGroupe.getHebergement();
             getVue().getModeleTableGroupe().addRow(ligneDonnees);            
         }       
     }
@@ -63,7 +58,7 @@ public class CtrlLesGroupes implements WindowListener{
      */
     private void quitter() {
         // Confirmer avant de quitter
-        int rep = JOptionPane.showConfirmDialog(getVue(), "Quitter l'application\nEtes-vous sûr(e) ?", "AGENCEB", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int rep = JOptionPane.showConfirmDialog(getVue(), "Quitter l'application\nEtes-vous sûr(e) ?", "festival", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (rep == JOptionPane.YES_OPTION) {
             // mettre fin à l'application
             System.exit(0);

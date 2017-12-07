@@ -81,7 +81,7 @@ public class DaoGroupe {
      * @return collection d'adresses
      * @throws SQLException 
      */
-    public static List<Groupe> selectAllByVille(String extraitNomGroupe) throws SQLException {
+    public static List<Groupe> selectAllByGroupe(String extraitNomGroupe) throws SQLException {
         List<Groupe> lesGroupes = new ArrayList<Groupe>();
         Groupe unGroupe;
         ResultSet rs;
