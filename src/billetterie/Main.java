@@ -27,7 +27,7 @@ public class Main {
         try {
             Jdbc.getInstance().connecter();
             VuePrincipale uneVue = new VuePrincipale();
-            CtrlLesGroupes unControleur = new CtrlLesGroupes(uneVue);
+            CtrlLesRepresentations unControleur = new CtrlLesRepresentations(uneVue);
             // afficher la vue
             uneVue.setVisible(true);
         } catch (ClassNotFoundException ex) {
