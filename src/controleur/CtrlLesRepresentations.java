@@ -5,12 +5,19 @@
  */
 package controleur;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modele.dao.DaoRepresentation;
 import modele.metier.Representation;
@@ -20,14 +27,17 @@ import vue.VuePrincipale;
  *
  * @author btssio
  */
-public class CtrlLesRepresentations implements WindowListener {
+public class CtrlLesRepresentations implements WindowListener, ActionListener, MouseListener {
      private VuePrincipale vue; // LA VUE
      
      public CtrlLesRepresentations(VuePrincipale vue) {
+         
         this.vue = vue;
         // le contrôleur écoute la vue
         this.vue.addWindowListener(this);
         // le controleur écoute le bouton jButtonRechercher de sa vue
+        this.vue.getjButton1().addActionListener(this);
+        this.vue.getjTextField1().addActionListener(this);
         // préparer l'état iniitial de la vue
         List<Representation> lesRepresentations = null;
         try {
@@ -46,12 +56,13 @@ public class CtrlLesRepresentations implements WindowListener {
      */
     private final void afficherLesRepresentations(List<Representation> desRepresentations) {
         getVue().getModeleTableRepresentation().setRowCount(0);
-        String[] titresColonnes = {"Lieu", "Groupe", "date","heureDeb","heureFin"};
+        String[] titresColonnes = {"Lieu", "Groupe", "date","heureDeb","heureFin","NbPlace"};
         getVue().getModeleTableRepresentation().setColumnIdentifiers(titresColonnes);
         
 
         
         String[] ligneDonnees = new String[5];
+
         
         for (Representation uneRepresentation : desRepresentations) {
             ligneDonnees[0] = uneRepresentation.getLieu();
@@ -112,6 +123,37 @@ public class CtrlLesRepresentations implements WindowListener {
     @Override
     public void windowDeactivated(WindowEvent e) {
         }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+         
+        
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     
  
