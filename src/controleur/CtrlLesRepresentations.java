@@ -57,8 +57,8 @@ public class CtrlLesRepresentations implements WindowListener {
             ligneDonnees[0] = uneRepresentation.getLieu();
             ligneDonnees[1] = uneRepresentation.getGroupe();
             ligneDonnees[2] = uneRepresentation.getDate();
-            ligneDonnees[3] = uneRepresentation.getHeure_debut();
-            ligneDonnees[4] = uneRepresentation.getHeure_fin();
+            ligneDonnees[3] = uneRepresentation.getHeureDebut();
+            ligneDonnees[4] = uneRepresentation.getHeureFin();
             getVue().getModeleTableRepresentation().addRow(ligneDonnees);            
         }       
     }

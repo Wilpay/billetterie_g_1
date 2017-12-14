@@ -5,86 +5,95 @@
  */
 package modele.metier;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.Date;
-
 /**
  *
  * @author btssio
  */
 public class Representation {
-    
-    private String id;
-    private String date;
-    private String lieu;
+    private int id;
     private String groupe;
-    private String heure_debut;
-    private String heure_fin;
+    private String lieux;
+    private String date;
+    private String heureD;
+    private String heureF;
+    private int placesDispo;
     
-    public Representation(String id, String date, String lieu, String groupe, String heure_debut, String heure_fin) {
-        this.id = id;
-        this.date = date;
-        this.lieu = lieu;
-        this.groupe = groupe;
-        this.heure_debut = heure_debut;
-        this.heure_fin = heure_fin;
-
+        
+    
+    
+    //constructeur
+    public Representation(int id,String date,String Lieu,String Groupe,String heureDebut,String heureFin,int placesDispo){
+    
+    this.id=id;
+    this.date=date;
+    this.lieux=Lieu;
+    this.groupe=Groupe;
+    this.heureD=heureDebut;
+    this.heureF=heureFin;
+    this.placesDispo=placesDispo;
+   
     }
 
-
+    //toString
     @Override
     public String toString() {
-        return "Representation{" + "id=" + id + ", date=" + date + ", lieu=" + lieu + ", groupe=" + groupe + ", heure_debut=" + heure_debut + ", heure_fin=" + heure_fin + '}';
+        return "<html>Groupe=" + groupe +"<br> date=" + date + "<br> Lieu=" + lieux + "<br> heureDebut=" + heureD + "<br> heureFin=" + heureF + "<br> placesDispo=" + placesDispo + "</html>";
     }
 
-    public String getId() {
-        return id;
+    public int getPlacesDispo() {
+        return placesDispo;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setPlacesDispo(int placesDispo) {
+        this.placesDispo = placesDispo;
     }
+
+    //accesseur
 
     public String getDate() {
         return date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
-
     public String getLieu() {
-        return lieu;
-    }
-
-    public void setLieu(String lieu) {
-        this.lieu = lieu;
+        return lieux;
     }
 
     public String getGroupe() {
         return groupe;
     }
 
+    public String getHeureDebut() {
+        return heureD;
+    }
+
+    public String getHeureFin() {
+        return heureF;
+    }
+    
+    
+    
+    
+    
+    //mutateur
+ 
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setLieu(String lieu) {
+        this.lieux = lieu;
+    }
+
     public void setGroupe(String groupe) {
         this.groupe = groupe;
     }
 
-    public String getHeure_debut() {
-        return heure_debut;
+    public void setHeureDebut(String heureDebut) {
+        this.heureD= heureDebut;
     }
 
-    public void setHeure_debut(String heure_debut) {
-        this.heure_debut = heure_debut;
+    public void setHeureFin(String heureFin) {
+        this.heureF= heureFin;
     }
-
-    public String getHeure_fin() {
-        return heure_fin;
-    }
-
-    public void setHeure_fin(String heure_fin) {
-        this.heure_fin = heure_fin;
-    }
-    
-    
 }

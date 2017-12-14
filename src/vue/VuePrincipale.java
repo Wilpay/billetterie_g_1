@@ -114,4 +114,10 @@ public class VuePrincipale extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableRepresentation;
     // End of variables declaration//GEN-END:variables
+
+    public Object getjTableRepresentation() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  
 }

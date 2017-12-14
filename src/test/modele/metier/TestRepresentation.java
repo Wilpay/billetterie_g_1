@@ -5,32 +5,34 @@
  */
 package test.modele.metier;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalTime;
-
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import modele.dao.Jdbc;
 import modele.metier.Representation;
+import test.modele.dao.TestDaoRepresentation;
 
 /**
  *
  * @author btssio
  */
 public class TestRepresentation {
-    public static void main(String[] args) {
-        Representation representation, representation1, representation2;
-        System.out.println("\nTest n°1 : instanciation et accesseurs");
-        representation = new Representation("5", "2015-05-23","La Joliverie", "Groupe folklorique des Émirats", "18:15", "19:00");
-        System.out.println(representation);
-        System.out.println("\nTest n°2 : mutateurs");
-        representation.setDate("2015-05-23");
-        representation.setLieu("La Joliverie");
-        representation.setGroupe("Groupe folklorique des Émirats");
-        representation.setHeure_debut("18:15");
-        representation.setHeure_fin("19:00");
-        System.out.println(representation);
-        representation1 = new Representation("1",null, null, null, null, null);
-        System.out.println(representation1.equals(representation));
-        representation2 = new Representation("2",null, null, null, null, null);
-        System.out.println(representation1.equals(representation2));
+    public static void main(String args[]){
+        try {
+            Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "festival", "root", "joliverie");
+            Jdbc.getInstance().connecter();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TestDaoRepresentation.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(TestDaoRepresentation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        System.out.println("---------------------------------------------------");
+        System.out.println("test de création d'un objet de type representation:");
+        System.out.println("---------------------------------------------------");
+        Representation laRepresentation = new Representation(1,"2018-06-11","Parc Hellfest, Clisson ","Hellfest 2018","14:00:00","23:00:00",5000);
+        System.out.println(laRepresentation.toString());
+        System.out.println("test réussi");
     }
 }
