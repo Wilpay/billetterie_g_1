@@ -39,7 +39,7 @@ public class DaoRepresentation {
             String Groupe = rs.getString("Groupe");
             String heureDebut = rs.getString("heure_deb");
             String heureFin = rs.getString("heure_fin");
-            int placesDispo = rs.getInt("places_dispo");
+            String placesDispo = rs.getString("places_dispo");
             uneRepresentation = new Representation(id, date, Lieu,Groupe,heureDebut,heureFin,placesDispo);
             lesRepresentation.add(uneRepresentation);
         }
@@ -62,7 +62,7 @@ public class DaoRepresentation {
             String Groupe = rs.getString("Groupe");
             String heureDebut = rs.getString("heure_deb");
             String heureFin = rs.getString("heure_fin");
-            int placesDispo = rs.getInt("places_dispo");
+            String placesDispo = rs.getString("places_dispo");
             uneRepresentation = new Representation(id, date, Lieu,Groupe,heureDebut,heureFin,placesDispo);
         }
         return uneRepresentation;
@@ -92,7 +92,7 @@ public class DaoRepresentation {
             String Groupe = rs.getString("Groupe");
             String heureDebut = rs.getString("heure_deb");
             String heureFin = rs.getString("heure_fin");
-            int placesDispo = rs.getInt("places_dispo");
+            String placesDispo = rs.getString("places_dispo");
             uneRepresentation = new Representation(id, date, Lieu,Groupe,heureDebut,heureFin,placesDispo);
             lesRepresentations.add(uneRepresentation);
         }

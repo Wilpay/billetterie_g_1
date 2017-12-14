@@ -38,6 +38,7 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
         // le controleur écoute le bouton jButtonRechercher de sa vue
         this.vue.getjButton1().addActionListener(this);
         this.vue.getjTextField1().addActionListener(this);
+        this.vue.getjTableRepresentation().addMouseListener(this);
         // préparer l'état iniitial de la vue
         List<Representation> lesRepresentations = null;
         try {
@@ -61,7 +62,7 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
         
 
         
-        String[] ligneDonnees = new String[5];
+        String[] ligneDonnees = new String[6];
 
         
         for (Representation uneRepresentation : desRepresentations) {
@@ -70,6 +71,7 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
             ligneDonnees[2] = uneRepresentation.getDate();
             ligneDonnees[3] = uneRepresentation.getHeureDebut();
             ligneDonnees[4] = uneRepresentation.getHeureFin();
+            ligneDonnees[5] = uneRepresentation.getPlacesDispo();
             getVue().getModeleTableRepresentation().addRow(ligneDonnees);            
         }       
     }
@@ -131,28 +133,28 @@ public class CtrlLesRepresentations implements WindowListener, ActionListener, M
 
     @Override
     public void mouseClicked(MouseEvent e) {
-         
+         JOptionPane.showMessageDialog(vue, "klhbvklvhljk");
         
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     

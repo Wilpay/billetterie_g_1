@@ -56,6 +56,7 @@ public class VuePrincipale extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTableRepresentation.setEnabled(false);
         jScrollPane1.setViewportView(jTableRepresentation);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {

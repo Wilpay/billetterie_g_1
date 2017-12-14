@@ -16,13 +16,13 @@ public class Representation {
     private String date;
     private String heureD;
     private String heureF;
-    private int placesDispo;
+    private String placesDispo;
     
         
     
     
     //constructeur
-    public Representation(int id,String date,String Lieu,String Groupe,String heureDebut,String heureFin,int placesDispo){
+    public Representation(int id,String date,String Lieu,String Groupe,String heureDebut,String heureFin,String placesDispo){
     
     this.id=id;
     this.date=date;
@@ -40,11 +40,11 @@ public class Representation {
         return "<html>Groupe=" + groupe +"<br> date=" + date + "<br> Lieu=" + lieux + "<br> heureDebut=" + heureD + "<br> heureFin=" + heureF + "<br> placesDispo=" + placesDispo + "</html>";
     }
 
-    public int getPlacesDispo() {
+    public String getPlacesDispo() {
         return placesDispo;
     }
 
-    public void setPlacesDispo(int placesDispo) {
+    public void setPlacesDispo(String placesDispo) {
         this.placesDispo = placesDispo;
     }
 
