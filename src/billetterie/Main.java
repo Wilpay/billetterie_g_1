@@ -26,8 +26,8 @@ public class Main {
         Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "festival", "root", "joliverie");
         try {
             Jdbc.getInstance().connecter();
-            VueBilletterie uneVue = new VueBilletterie();
-            //CtrlLesRepresentations unControleur = new CtrlLesRepresentations(uneVue);
+            VuePrincipale uneVue = new VuePrincipale();
+            CtrlLesRepresentations unControleur = new CtrlLesRepresentations(uneVue);
             // afficher la vue
             uneVue.setVisible(true);
         } catch (ClassNotFoundException ex) {

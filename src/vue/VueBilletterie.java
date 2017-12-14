@@ -97,7 +97,9 @@ public class VueBilletterie extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsActionPerformed
-        
+        VuePrincipale v=new VuePrincipale();
+        v.setVisible(true);
+        this.hide();
     }//GEN-LAST:event_jButtonConsActionPerformed
 
     private void jButtonReseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReseActionPerformed
